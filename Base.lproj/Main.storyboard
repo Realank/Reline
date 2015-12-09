@@ -72,10 +72,10 @@
             </objects>
             <point key="canvasLocation" x="2" y="376"/>
         </scene>
-        <!--View Controller-->
+        <!--Chat View Controller-->
         <scene sceneID="a6d-wQ-DHo">
             <objects>
-                <viewController id="dOn-Wu-IS5" sceneMemberID="viewController">
+                <viewController id="dOn-Wu-IS5" customClass="ChatViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="grd-yb-N3j"/>
                         <viewControllerLayoutGuide type="bottom" id="wOf-bS-H9K"/>
@@ -141,7 +141,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v6U-l4-erX">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v6U-l4-erX">
                                 <rect key="frame" x="285" y="72" width="30" height="30"/>
                                 <state key="normal" title="登出"/>
                                 <connections>
@@ -150,6 +150,10 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="v6U-l4-erX" firstAttribute="centerX" secondItem="3Ym-dT-hLo" secondAttribute="centerX" id="1Rr-0D-NgL"/>
+                            <constraint firstItem="v6U-l4-erX" firstAttribute="top" secondItem="cyL-At-pqc" secondAttribute="bottom" constant="8" symbolic="YES" id="Et4-JJ-S5a"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="HXa-7e-a5h"/>
                 </viewController>
