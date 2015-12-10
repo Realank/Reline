@@ -1,0 +1,25 @@
+PODS:
+  - EaseMobSDKFull (2.2.1)
+  - MBProgressHUD (0.9.1)
+  - UMengAnalytics (3.6.6)
+
+DEPENDENCIES:
+  - EaseMobSDKFull (from `https://github.com/easemob/sdk-ios-cocoapods-integration.git`)
+  - MBProgressHUD (~> 0.9.1)
+  - UMengAnalytics
+
+EXTERNAL SOURCES:
+  EaseMobSDKFull:
+    :git: https://github.com/easemob/sdk-ios-cocoapods-integration.git
+
+CHECKOUT OPTIONS:
+  EaseMobSDKFull:
+    :commit: c4a63a69518d396309e8d6c267f2756cac3877ee
+    :git: https://github.com/easemob/sdk-ios-cocoapods-integration.git
+
+SPEC CHECKSUMS:
+  EaseMobSDKFull: 4a18d6ad47b4ccca564833963511bddd151e1654
+  MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
+  UMengAnalytics: 4bf831415146b9c57cb10be65fbd43462ef8cf65
+
+COCOAPODS: 0.39.0
