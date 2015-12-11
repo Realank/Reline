@@ -8,6 +8,8 @@
 //
 
 #import "SettingViewController.h"
+#import "SelectColorViewController.h"
+
 
 @interface SettingViewController ()
 
@@ -18,7 +20,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+
 }
+
 - (IBAction)logout:(id)sender {
     
     HUD_SHOW;
@@ -34,5 +39,11 @@
     
 }
 
+- (IBAction)changeSenderColor:(id)sender {
+    SelectColorViewController* selectVC =  [[SelectColorViewController alloc]init];
+    [self presentViewController:selectVC animated:YES completion:nil];
+}
+- (IBAction)changeReceiverColor:(id)sender {
+}
 
 @end

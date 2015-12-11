@@ -8,6 +8,7 @@
 
 #import "SenderChatCell.h"
 #import "EMMessage+message.h"
+#import "SettingModel.h"
 
 @interface SenderChatCell ()
 @property (weak, nonatomic) IBOutlet UILabel *messageLabel;
@@ -25,6 +26,7 @@
 
 - (void)layoutSubviews {
     self.messageLabel.text = [self.message title];
+    self.messageBubbleView.backgroundColor = [SettingModel sharedInstance].senderColor;
 }
 
 + (CGFloat)cellHeightForMessage:(EMMessage *)message {

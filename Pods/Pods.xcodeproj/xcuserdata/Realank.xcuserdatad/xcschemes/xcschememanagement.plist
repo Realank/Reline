@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Color-Picker-for-iOS.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>MBProgressHUD.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -17,7 +22,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>CA6B6247C232863826EA479E552E6B28</key>
+		<key>2192596913215C3479186D79D8BC7745</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9A78C3A05A5998BFD2C6B372328EAE74</key>
 		<dict>
 			<key>primary</key>
 			<true/>

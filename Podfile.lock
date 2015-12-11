@@ -1,9 +1,11 @@
 PODS:
+  - Color-Picker-for-iOS (2.0.2)
   - EaseMobSDKFull (2.2.1)
   - MBProgressHUD (0.9.1)
   - UMengAnalytics (3.6.6)
 
 DEPENDENCIES:
+  - Color-Picker-for-iOS (~> 2.0)
   - EaseMobSDKFull (from `https://github.com/easemob/sdk-ios-cocoapods-integration.git`)
   - MBProgressHUD (~> 0.9.1)
   - UMengAnalytics
@@ -18,6 +20,7 @@ CHECKOUT OPTIONS:
     :git: https://github.com/easemob/sdk-ios-cocoapods-integration.git
 
 SPEC CHECKSUMS:
+  Color-Picker-for-iOS: 4980589b3e3cfe7198f227dd50be9adb02d8bc0b
   EaseMobSDKFull: 4a18d6ad47b4ccca564833963511bddd151e1654
   MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
   UMengAnalytics: 4bf831415146b9c57cb10be65fbd43462ef8cf65

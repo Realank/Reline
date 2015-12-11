@@ -282,9 +282,9 @@
     
     CGRect keyboardRect = [aValue CGRectValue];
     
-//    NSValue *animationDurationValue = [userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey];
-//    NSTimeInterval animationDuration;
-//    [animationDurationValue getValue:&animationDuration];
+    NSValue *animationDurationValue = [userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey];
+    NSTimeInterval animationDuration;
+    [animationDurationValue getValue:&animationDuration];
     
     self.bottomSpaceForKeyboard.constant = keyboardRect.size.height - 50;
 }

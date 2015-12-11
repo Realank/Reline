@@ -22,6 +22,8 @@
 		8C827E741C17F6F000112736 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C827E731C17F6F000112736 /* libiconv.tbd */; };
 		8C827E761C17F6F900112736 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C827E751C17F6F900112736 /* libz.tbd */; };
 		8C827E781C17F70100112736 /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C827E771C17F70100112736 /* libresolv.tbd */; };
+		8CA463831C1AAFAF004350F6 /* SettingModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CA463821C1AAFAF004350F6 /* SettingModel.m */; };
+		8CA463861C1AC85E004350F6 /* SelectColorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CA463851C1AC85E004350F6 /* SelectColorViewController.m */; };
 		8CCC6C9B1C17AB9D00FA5714 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CCC6C9A1C17AB9D00FA5714 /* main.m */; };
 		8CCC6C9E1C17AB9D00FA5714 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CCC6C9D1C17AB9D00FA5714 /* AppDelegate.m */; };
 		8CCC6CA11C17AB9D00FA5714 /* StartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CCC6CA01C17AB9D00FA5714 /* StartViewController.m */; };
@@ -78,6 +80,10 @@
 		8C827E731C17F6F000112736 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
 		8C827E751C17F6F900112736 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		8C827E771C17F70100112736 /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
+		8CA463811C1AAFAF004350F6 /* SettingModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingModel.h; path = Models/SettingModel.h; sourceTree = "<group>"; };
+		8CA463821C1AAFAF004350F6 /* SettingModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingModel.m; path = Models/SettingModel.m; sourceTree = "<group>"; };
+		8CA463841C1AC85E004350F6 /* SelectColorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SelectColorViewController.h; path = TabViewControllers/SelectColorViewController.h; sourceTree = "<group>"; };
+		8CA463851C1AC85E004350F6 /* SelectColorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SelectColorViewController.m; path = TabViewControllers/SelectColorViewController.m; sourceTree = "<group>"; };
 		8CCC6C961C17AB9D00FA5714 /* Reline.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reline.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CCC6C9A1C17AB9D00FA5714 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8CCC6C9C1C17AB9D00FA5714 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -158,6 +164,8 @@
 				8C0824EC1C181E7A003E9C3B /* SettingViewController.m */,
 				8C0824F21C182EA0003E9C3B /* ChatViewController.h */,
 				8C0824F31C182EA0003E9C3B /* ChatViewController.m */,
+				8CA463841C1AC85E004350F6 /* SelectColorViewController.h */,
+				8CA463851C1AC85E004350F6 /* SelectColorViewController.m */,
 			);
 			name = TabViewControllers;
 			sourceTree = "<group>";
@@ -251,6 +259,8 @@
 				8CE0B8AE1C190A41008635E5 /* EMConversation+message.m */,
 				8CE0B8B01C190D01008635E5 /* EMMessage+message.h */,
 				8CE0B8B11C190D01008635E5 /* EMMessage+message.m */,
+				8CA463811C1AAFAF004350F6 /* SettingModel.h */,
+				8CA463821C1AAFAF004350F6 /* SettingModel.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -449,7 +459,9 @@
 			files = (
 				8C375E0D1C194C200037ED7F /* ReceiverChatCell.m in Sources */,
 				8CE0B8AF1C190A41008635E5 /* EMConversation+message.m in Sources */,
+				8CA463831C1AAFAF004350F6 /* SettingModel.m in Sources */,
 				8CCC6CA11C17AB9D00FA5714 /* StartViewController.m in Sources */,
+				8CA463861C1AC85E004350F6 /* SelectColorViewController.m in Sources */,
 				8CCC6C9E1C17AB9D00FA5714 /* AppDelegate.m in Sources */,
 				8C0824F41C182EA0003E9C3B /* ChatViewController.m in Sources */,
 				8CCC6C9B1C17AB9D00FA5714 /* main.m in Sources */,
