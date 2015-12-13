@@ -212,6 +212,8 @@
 				8C0824EA1C181E57003E9C3B /* TabViewControllers */,
 				8CCC6C9C1C17AB9D00FA5714 /* AppDelegate.h */,
 				8CCC6C9D1C17AB9D00FA5714 /* AppDelegate.m */,
+				8C0824EE1C18294E003E9C3B /* PublicUtil.h */,
+				8C0824EF1C18294E003E9C3B /* PublicUtil.m */,
 				8CCC6C9F1C17AB9D00FA5714 /* StartViewController.h */,
 				8CCC6CA01C17AB9D00FA5714 /* StartViewController.m */,
 				8CCC6CA21C17AB9D00FA5714 /* Main.storyboard */,
@@ -219,8 +221,6 @@
 				8CCC6CA51C17AB9D00FA5714 /* Assets.xcassets */,
 				8CCC6CAA1C17AB9D00FA5714 /* Info.plist */,
 				8CCC6C991C17AB9D00FA5714 /* Supporting Files */,
-				8C0824EE1C18294E003E9C3B /* PublicUtil.h */,
-				8C0824EF1C18294E003E9C3B /* PublicUtil.m */,
 			);
 			path = Reline;
 			sourceTree = "<group>";

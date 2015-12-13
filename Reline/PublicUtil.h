@@ -11,6 +11,8 @@
 
 #define HUD_SHOW [MBProgressHUD showHUDAddedTo:self.view animated:YES];
 #define HUD_HIDE [MBProgressHUD hideHUDForView:self.view animated:YES];
+#define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
+#define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
 @interface PublicUtil : NSObject
 
 

@@ -35,6 +35,7 @@
     self.automaticallyAdjustsScrollViewInsets = NO;
     self.messageArray = [NSMutableArray array];
     self.inputTextField.delegate = self;
+    [self.inputTextField becomeFirstResponder];
     
     self.sender = [[[EaseMob sharedInstance].chatManager loginInfo] objectForKey:@"username"];
     if ([self.sender isEqualToString:@"realank"]) {
@@ -60,6 +61,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(keyboardWillShow:)
                                                  name:UIKeyboardWillShowNotification

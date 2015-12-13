@@ -30,17 +30,16 @@
     
     if (self = [super init]) {
         
-        [self updateColor];
+        [self fetchColor];
         
     }
     
     return self;
 }
 
-- (void)updateColor {
+- (void)fetchColor {
     
-    self.senderColor = [UIColor greenColor];
-    self.receiverColor = [UIColor blueColor];
+
     NSDictionary *dict = [[NSUserDefaults standardUserDefaults] objectForKey:@"settingChatColor"];
     if (!dict) {
         dict = @{@"senderColor":@"10:200:200",@"receiverColor":@"222:222:222"};
@@ -54,7 +53,7 @@
             NSInteger r = [colorArr[0] intValue];
             NSInteger g = [colorArr[1] intValue];
             NSInteger b = [colorArr[2] intValue];
-            self.senderColor = [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1];
+            _senderColor = [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1];
         }
         colorString = [dict objectForKey:@"receiverColor"];
         colorArr = [colorString componentsSeparatedByString:@":"];
@@ -62,9 +61,41 @@
             NSInteger r = [colorArr[0] intValue];
             NSInteger g = [colorArr[1] intValue];
             NSInteger b = [colorArr[2] intValue];
-            self.receiverColor = [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1];
+            _receiverColor = [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1];
         }
+    }else{
+        _senderColor = [UIColor greenColor];
+        _receiverColor = [UIColor blueColor];
     }
+}
+
+-(void)saveColor {
+    NSMutableDictionary* dict = [NSMutableDictionary dictionary];
+    
+    CGFloat r,g,b;
+    [self.senderColor getRed:&r green:&g blue:&b alpha:NULL];
+    NSString* colorString = [NSString stringWithFormat:@"%03d:%03d:%03d",(int)(r*255),(int)(g*255),(int)(b*255)];
+    [dict setObject:colorString forKey:@"senderColor"];
+    
+    [self.receiverColor getRed:&r green:&g blue:&b alpha:NULL];
+    colorString = [NSString stringWithFormat:@"%03d:%03d:%03d",(int)(r*255),(int)(g*255),(int)(b*255)];
+    [dict setObject:colorString forKey:@"receiverColor"];
+    
+    [[NSUserDefaults standardUserDefaults] setObject:[dict copy] forKey:@"settingChatColor"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    
+    
+    
+}
+
+- (void)setSenderColor:(UIColor *)senderColor {
+    _senderColor = senderColor;
+    [self saveColor];
+}
+- (void)setReceiverColor:(UIColor *)receiverColor {
+    _receiverColor = receiverColor;
+    [self saveColor];
 }
 
 @end

@@ -9,9 +9,12 @@
 
 #import "SettingViewController.h"
 #import "SelectColorViewController.h"
+#import "SettingModel.h"
 
 
 @interface SettingViewController ()
+@property (weak, nonatomic) IBOutlet UIButton *sendColorBtn;
+@property (weak, nonatomic) IBOutlet UIButton *receiverColorBtn;
 
 @end
 
@@ -22,6 +25,11 @@
     // Do any additional setup after loading the view.
     
 
+}
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    self.sendColorBtn.backgroundColor = [SettingModel sharedInstance].senderColor;
+    self.receiverColorBtn.backgroundColor = [SettingModel sharedInstance].receiverColor;
 }
 
 - (IBAction)logout:(id)sender {
@@ -41,9 +49,21 @@
 
 - (IBAction)changeSenderColor:(id)sender {
     SelectColorViewController* selectVC =  [[SelectColorViewController alloc]init];
+    selectVC.isSender = YES;
+    if ([sender isKindOfClass:UIButton.class]) {
+        UIButton* btn = (UIButton*)sender;
+        selectVC.defaultColor = btn.backgroundColor;
+    }
     [self presentViewController:selectVC animated:YES completion:nil];
 }
 - (IBAction)changeReceiverColor:(id)sender {
+    SelectColorViewController* selectVC =  [[SelectColorViewController alloc]init];
+    selectVC.isSender = NO;
+    if ([sender isKindOfClass:UIButton.class]) {
+        UIButton* btn = (UIButton*)sender;
+        selectVC.defaultColor = btn.backgroundColor;
+    }
+    [self presentViewController:selectVC animated:YES completion:nil];
 }
 
 @end

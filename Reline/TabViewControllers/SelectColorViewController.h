@@ -10,4 +10,7 @@
 
 @interface SelectColorViewController : UIViewController
 
+
+@property (nonatomic, assign) BOOL isSender;
+@property (nonatomic, strong) UIColor *defaultColor;
 @end
