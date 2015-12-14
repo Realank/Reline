@@ -288,7 +288,11 @@
     NSTimeInterval animationDuration;
     [animationDurationValue getValue:&animationDuration];
     
-    self.bottomSpaceForKeyboard.constant = keyboardRect.size.height - 50;
+    [UIView animateWithDuration:animationDuration delay:0 options:UIViewAnimationOptionCurveLinear animations:^{
+        self.bottomSpaceForKeyboard.constant = keyboardRect.size.height - 50;
+        [self.view layoutIfNeeded];
+    } completion:nil];
+    
 }
 
 
@@ -296,13 +300,16 @@
 - (void)keyboardWillHide:(NSNotification *)notification {
     
     
-//    NSDictionary *userInfo = [notification userInfo];
+    NSDictionary *userInfo = [notification userInfo];
     
-//    NSValue *animationDurationValue = [userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey];
-//    NSTimeInterval animationDuration;
-//    [animationDurationValue getValue:&animationDuration];
+    NSValue *animationDurationValue = [userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey];
+    NSTimeInterval animationDuration;
+    [animationDurationValue getValue:&animationDuration];
     
-    self.bottomSpaceForKeyboard.constant = 0;
+    [UIView animateWithDuration:animationDuration delay:0 options:UIViewAnimationOptionCurveLinear animations:^{
+        self.bottomSpaceForKeyboard.constant = 0;
+        [self.view layoutIfNeeded];
+    } completion:nil];
                          
 }
 
