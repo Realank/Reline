@@ -7,6 +7,7 @@
 //
 
 #import "StartViewController.h"
+#import "ChangyanSDK.h"
 
 
 @interface StartViewController ()<IChatManagerDelegate>
@@ -57,15 +58,38 @@
 - (IBAction)login:(id)sender {
     
      __weak __typeof(self) weakSelf = self;
+    NSString* userName = self.userName.text;
+    NSString* password = self.password.text;
     HUD_SHOW;
-    [[EaseMob sharedInstance].chatManager asyncLoginWithUsername:self.userName.text password:self.password.text completion:^(NSDictionary *loginInfo, EMError *error) {
+    [[EaseMob sharedInstance].chatManager asyncLoginWithUsername:userName password:password completion:^(NSDictionary *loginInfo, EMError *error) {
         if (!error && loginInfo) {
-            HUD_HIDE;
+            
             // 设置自动登录
             [[EaseMob sharedInstance].chatManager setIsAutoLoginEnabled:weakSelf.autoLoginswitch.on];
             //获取数据库中数据
             [[EaseMob sharedInstance].chatManager loadDataFromDatabase];
-            [weakSelf loginSuccess];
+            
+            //畅言注册
+            [ChangyanSDK logout];
+            [ChangyanSDK loginSSO:userName userName:userName profileUrl:@"" imgUrl:@"" completeBlock:^(CYStatusCode statusCode, NSString *responseStr) {
+                if (statusCode == CYSuccess) {
+                    //登陆成功
+                    HUD_HIDE;
+                    [weakSelf loginSuccess];
+                } else{
+                    [[EaseMob sharedInstance].chatManager asyncLogoffWithUnbindDeviceToken:YES completion:^(NSDictionary *info, EMError *error) {
+                        HUD_HIDE;
+//                        if (!error) {
+//                            NSLog(@"退出成功");
+//                            [weakSelf dismissViewControllerAnimated:YES completion:nil];
+//                            
+//                        }
+                        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"登录失败" message:@"请重新登录" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles: nil];
+                        [alert show];
+                    } onQueue:nil];
+                }
+            }];
+            
         }
     } onQueue:nil];
 

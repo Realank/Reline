@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5462A4701C26421200378DFB /* changyan.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5462A46D1C26421200378DFB /* changyan.bundle */; };
+		5462A4711C26421200378DFB /* libChangyanSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5462A46F1C26421200378DFB /* libChangyanSDK.a */; };
+		5462A4731C26423700378DFB /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5462A4721C26423700378DFB /* Security.framework */; };
 		8C0824ED1C181E7A003E9C3B /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C0824EC1C181E7A003E9C3B /* SettingViewController.m */; };
 		8C0824F01C18294E003E9C3B /* PublicUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C0824EF1C18294E003E9C3B /* PublicUtil.m */; };
 		8C0824F41C182EA0003E9C3B /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C0824F31C182EA0003E9C3B /* ChatViewController.m */; };
@@ -57,6 +60,10 @@
 /* Begin PBXFileReference section */
 		17E7F20CD7E268E29F0639A1 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		1E0FA2B0424F79AB9548C888 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		5462A46D1C26421200378DFB /* changyan.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = changyan.bundle; path = ThirdParty/changyan.bundle; sourceTree = "<group>"; };
+		5462A46E1C26421200378DFB /* ChangyanSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChangyanSDK.h; path = ThirdParty/ChangyanSDK.h; sourceTree = "<group>"; };
+		5462A46F1C26421200378DFB /* libChangyanSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libChangyanSDK.a; path = ThirdParty/libChangyanSDK.a; sourceTree = "<group>"; };
+		5462A4721C26423700378DFB /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		801237B9A0362E63BD47CD6E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C0824EB1C181E7A003E9C3B /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingViewController.h; path = TabViewControllers/SettingViewController.h; sourceTree = "<group>"; };
 		8C0824EC1C181E7A003E9C3B /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingViewController.m; path = TabViewControllers/SettingViewController.m; sourceTree = "<group>"; };
@@ -111,6 +118,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5462A4731C26423700378DFB /* Security.framework in Frameworks */,
 				8C827E781C17F70100112736 /* libresolv.tbd in Frameworks */,
 				8C827E761C17F6F900112736 /* libz.tbd in Frameworks */,
 				8C827E741C17F6F000112736 /* libiconv.tbd in Frameworks */,
@@ -118,6 +126,7 @@
 				8C827E701C17F6DC00112736 /* libsqlite3.tbd in Frameworks */,
 				8C827E6E1C17F6D200112736 /* libstdc++.6.0.9.tbd in Frameworks */,
 				8C827E6C1C17F6BB00112736 /* CFNetwork.framework in Frameworks */,
+				5462A4711C26421200378DFB /* libChangyanSDK.a in Frameworks */,
 				8C827E6A1C17F6B100112736 /* MobileCoreServices.framework in Frameworks */,
 				A67BCDDDAA73713BA21B1391 /* libPods.a in Frameworks */,
 			);
@@ -143,6 +152,7 @@
 		24514BEE4AC3A81BA1A3ED03 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5462A4721C26423700378DFB /* Security.framework */,
 				8C827E771C17F70100112736 /* libresolv.tbd */,
 				8C827E751C17F6F900112736 /* libz.tbd */,
 				8C827E731C17F6F000112736 /* libiconv.tbd */,
@@ -154,6 +164,16 @@
 				801237B9A0362E63BD47CD6E /* libPods.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5462A46C1C2641E200378DFB /* ThirdParty */ = {
+			isa = PBXGroup;
+			children = (
+				5462A46D1C26421200378DFB /* changyan.bundle */,
+				5462A46E1C26421200378DFB /* ChangyanSDK.h */,
+				5462A46F1C26421200378DFB /* libChangyanSDK.a */,
+			);
+			name = ThirdParty;
 			sourceTree = "<group>";
 		};
 		8C0824EA1C181E57003E9C3B /* TabViewControllers */ = {
@@ -208,6 +228,7 @@
 		8CCC6C981C17AB9D00FA5714 /* Reline */ = {
 			isa = PBXGroup;
 			children = (
+				5462A46C1C2641E200378DFB /* ThirdParty */,
 				8CE0B8AC1C1909CE008635E5 /* Models */,
 				8C0824EA1C181E57003E9C3B /* TabViewControllers */,
 				8CCC6C9C1C17AB9D00FA5714 /* AppDelegate.h */,
@@ -382,6 +403,7 @@
 			files = (
 				8C375E091C194C060037ED7F /* SenderChatCell.xib in Resources */,
 				8CF9C41D1C1816C600FEC095 /* Launch Screen.storyboard in Resources */,
+				5462A4701C26421200378DFB /* changyan.bundle in Resources */,
 				8CCC6CA61C17AB9D00FA5714 /* Assets.xcassets in Resources */,
 				8CCC6CA41C17AB9D00FA5714 /* Main.storyboard in Resources */,
 				8C375E0E1C194C200037ED7F /* ReceiverChatCell.xib in Resources */,
@@ -606,6 +628,10 @@
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Reline/PrefixHeader.pch";
 				INFOPLIST_FILE = Reline/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Reline/ThirdParty",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.realank.Reline;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -621,6 +647,10 @@
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Reline/PrefixHeader.pch";
 				INFOPLIST_FILE = Reline/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Reline/ThirdParty",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.realank.Reline;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

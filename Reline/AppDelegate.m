@@ -7,7 +7,8 @@
 //
 
 #import "AppDelegate.h"
-
+#import "ChangyanSDK.h"
+#import "StartViewController.h"
 
 @interface AppDelegate ()
 
@@ -21,6 +22,17 @@
     
     application.applicationIconBadgeNumber = 0;
     
+    [self initEaseMobWithApplication:application withOptions:launchOptions];
+    
+    [self registRemoteNotificationWithApplication:application];
+    
+    [self initChangYan];
+    
+    return YES;
+}
+
+#pragma mark - 初始化第三方sdk
+- (void)initEaseMobWithApplication:(UIApplication*) application withOptions:(NSDictionary *)launchOptions{
     NSString *apnsCertName = nil;
 #if 0//DEBUG
     apnsCertName = @"reline_apns_dev";
@@ -29,7 +41,9 @@
 #endif
     [[EaseMob sharedInstance] registerSDKWithAppKey:@"realank-com#reline" apnsCertName:apnsCertName];
     [[EaseMob sharedInstance] application:application didFinishLaunchingWithOptions:launchOptions];
-    
+}
+
+- (void)registRemoteNotificationWithApplication:(UIApplication*) application{
     //iOS8 注册APNS
     if ([application respondsToSelector:@selector(registerForRemoteNotifications)]) {
         [application registerForRemoteNotifications];
@@ -45,10 +59,23 @@
         UIRemoteNotificationTypeAlert;
         [[UIApplication sharedApplication] registerForRemoteNotificationTypes:notificationTypes];
     }
-    
-    return YES;
 }
 
+- (void)initChangYan{
+    [ChangyanSDK registerApp:@"cys5h4gcM"
+                      appKey:@"3e4a7b532abeb06d7bd02f288a0f80e0"
+                 redirectUrl:@"http://10.2.58.251:8081/login-success.html"
+        anonymousAccessToken:@"realankhBcOtwGzEapYEsKt69Us55p8xBPbvxZ8EhW0"];
+    
+    [ChangyanSDK setAllowSelfLogin:YES];
+    [ChangyanSDK setLoginViewController:[[StartViewController alloc] init]];
+    
+//    [ChangyanSDK setAllowAnonymous:YES];
+    [ChangyanSDK setAllowRate:YES];
+    [ChangyanSDK setAllowUpload:YES];
+}
+
+#pragma mark - 处理app代理
 
 // 将得到的deviceToken传给SDK
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken{
